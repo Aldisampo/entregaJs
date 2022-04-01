@@ -1,15 +1,15 @@
 import React from "react";
-import MyNavBar from "./components/MyNavBar";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
-
+import ItemListContainer from "./components/ItemListContainer";
 
 export default function App() {
 
 
   return (
     <>
-     <MyNavBar />
+     <Navbar />
+     <ItemListContainer />
      <Footer />
     </>
   );
