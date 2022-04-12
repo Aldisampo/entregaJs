@@ -1,14 +1,26 @@
-import React from "react";
-import ItemCount from "./ItemCount";
+import React, {useEffect, useState } from 'react';
+import promesas from '../utils/promesas';
+import productos from '../utils/productos';
+import ItemList from './items/ItemList';
 
-function ItemListContainer() {
-    return (
-      <>
+function ItemListContainer({message}) {
+  
+  const [items, setItems] = useState([]);
+  
+  useEffect(() => {
+    promesas(3000, productos)
+    .then(resultado => setItems(resultado))
+    .catch(error => console.log(error));
+  }, [items])
+
+  return (
+    <>
+    <h1>{message}</h1>
       <div>
-        <ItemCount stock={5} initial={1}/>
+        <ItemList productos={items}/>
       </div>
-      </>
+    </>
     )
-  }
+  } 
 
-  export default ItemListContainer
+export default ItemListContainer

@@ -1,8 +1,9 @@
-import Button from 'react-bootstrap/Button'
-import React, { useState } from "react"
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
+import React, { useState } from "react";
 
 function ItemCount({stock, initial}) {
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(initial);
 
     function adding () {
         if(count < stock) {
@@ -10,21 +11,22 @@ function ItemCount({stock, initial}) {
     }
     function subs (){ 
         if(count > 0) {
-        setCount(count - 1);}
+        setCount(count > initial);}
     }
     function onAdd (){
-        alert(`you added`+ count + `items to your cart`);
+        alert('you added'+ count + 'items to your cart');
     }
-
 
     return (
         <div>
-            <Button onClick={subs} variant="secondary">-</Button>
-            <p>{count}</p>
-            <Button onClick={adding}  variant="secondary">+</Button>
-            <Button variant="warning">Comprar</Button>
-
-        </div>
+            
+            <ButtonGroup variant="outlined" aria-label="outlined button group">
+            <Button onClick={subs} size="large">-</Button>
+            <Button size="large"><p>{count}</p></Button>
+            <Button onClick={adding} size="large">+</Button>
+            </ButtonGroup> <br></br>
+            <Button onClick={onAdd} variant="outlined" size="large">comprar</Button>
+       </div>
     )
 }
 
