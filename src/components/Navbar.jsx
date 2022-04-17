@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import CartWidjets from './CartWidjets';
 
 
-const pages = ['Buzos', 'Pijamas','Remerones',];
+const pages = ['Buzos', 'Pijamas','Remeras',];
 const settings = ['Perfil', 'Cuenta', 'Salir'];
 
 const Navbar = () => {
