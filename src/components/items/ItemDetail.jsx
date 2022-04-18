@@ -1,12 +1,13 @@
 import React from 'react';
 
 
-const ItemDetail = ({ items }) => {
+const ItemDetail = ({ item }) => {
+
     return (
         <div>
-            <h2>detalle</h2>
-            <h3></h3>
-
+            {item &&
+               <h1>{item.nombre}</h1>}
+               <img src={item.imagen} alt={item} />
         </div>
         
     );

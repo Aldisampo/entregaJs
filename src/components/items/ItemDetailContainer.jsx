@@ -3,20 +3,19 @@ import ItemDetail from './ItemDetail';
 import  promesas from '../../utils/promesas';
 
 
-
 const ItemDetailContainer = () =>{
-    const [items, setItems] = useState({})
+    const [item, setItem] = useState({})
 
     useEffect(()=>{ //va adentro porque controla l que queremos renderizar (se rend. cuando cambia props o estado) y en que momento 
-        promesas()
+        promesas(1000, item[0])
             .then((res)=>{
-               setItems(res); // console.log(res)
+               setItem(res); // console.log(res)
             })
     }, [])
 
     return (
         <>
-            <ItemDetail productos={items}/>
+            <ItemDetail item={item}/>
         </>
     )
 };

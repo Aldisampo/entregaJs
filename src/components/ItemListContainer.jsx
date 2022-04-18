@@ -5,19 +5,19 @@ import ItemList from './items/ItemList';
 
 function ItemListContainer({message}) {
   
-  const [items, setItems] = useState([]);
+  const [item, setItems] = useState([]);
   
   useEffect(() => {
     promesas(3000, productos)
     .then(resultado => setItems(resultado))
     .catch(error => console.log(error));
-  }, [items])
+  }, [item])
 
   return (
     <>
     <h1>{message}</h1>
       <div>
-        <ItemList productos={items}/>
+        <ItemList productos={item}/>
       </div>
     </>
     )
