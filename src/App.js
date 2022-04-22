@@ -18,7 +18,7 @@ export default function App() {
                   path="/category/:categoryId"
                   element={<ItemListContainer />} 
                 />
-              <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+              <Route path="/item/:id" element={<ItemDetailContainer />} />
 
         </Routes>
      <Footer />

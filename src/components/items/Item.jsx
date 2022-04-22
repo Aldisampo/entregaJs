@@ -7,9 +7,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import productos from '../../utils/productos';
 
-function Item ({id, nombre, precio, imagen}) {
+const Item = ({id, nombre, precio, imagen, category}) => {
     return (
             <Card key={id} sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -26,7 +25,10 @@ function Item ({id, nombre, precio, imagen}) {
           {precio}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          <Link to={`/item/${productos.id}`}>Ver detalle</Link>
+          {category}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          <Link to={`/item/${Item.id}`}>Ver detalle</Link>
         </Typography>
       </CardContent>
       <CardActions>

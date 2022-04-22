@@ -3,12 +3,12 @@ import Item from './Item'
 
 function ItemList({ productos }) {
     return (
-        productos.map(p => (
+        productos.map(producto => (
             <Item
-            key={p.id}
-            nombre={p.nombre}
-            precio={p.precio}
-            imagen={p.imagen}/>
+            key={producto.id}
+            nombre={producto.nombre}
+            precio={producto.precio}
+            imagen={producto.imagen}/>
         ))
     )
 }

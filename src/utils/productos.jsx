@@ -1,5 +1,6 @@
+import Item from "../components/items/Item";
 
- const productos = [
+const productos = [
     {
         id: 1,
         nombre: 'buzo mickey',
@@ -34,7 +35,7 @@
     },
     {
         id: 5,
-        nombre: ' buzo mickey',
+        nombre: 'buzo mickey',
         stock: 5,
         precio: '$1.000',
         imagen: 'https://www.desigual.com/dw/image/v2/BCVV_PRD/on/demandware.static/-/Sites-desigual-m-catalog/default/dwbe2d53ed/images/B2C/21WWSK44_2007_1.jpg?sfrm=jpg&sw=1125',
@@ -62,7 +63,7 @@
 export const promesas = (categoryId) => {
     return new Promise((resolve, reject) => {
         const productosFiltrados = productos.filter(
-            (productos) => productos.category === categoryId
+            (Item) => Item.category === categoryId
             );
         
         setTimeout(() => {
@@ -75,6 +76,13 @@ export const promesas = (categoryId) => {
         });
 };
 
-
-export default productos;
-
+export const promesa = (id) => {
+    return new Promise((resolve, reject) => {
+        const productoElegido = productos.find(
+            (Item)=> Item.id ===Number (id)
+        );
+        setTimeout(() => {
+                resolve(Item);
+            }, 1000);
+        });
+};
