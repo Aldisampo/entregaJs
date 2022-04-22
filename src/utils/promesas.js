@@ -1,14 +1,12 @@
-let isOk = true;
+import productos from "./productos";
+
+    const promesas = (time, task) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                    resolve(productos);
+                }, 1000);
+            });
+    };
 
 
-const promesas = (time, task) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if(isOk) {
-                resolve(task);
-            } else {
-                reject('Error');
-            }
-    }, time)})}
-
-    export default promesas;
+export default promesas;

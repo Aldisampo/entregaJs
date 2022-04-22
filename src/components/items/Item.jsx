@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -6,6 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import productos from '../../utils/productos';
 
 function Item ({id, nombre, precio, imagen}) {
     return (
@@ -22,6 +24,9 @@ function Item ({id, nombre, precio, imagen}) {
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {precio}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          <Link to={`/item/${productos.id}`}>Ver detalle</Link>
         </Typography>
       </CardContent>
       <CardActions>

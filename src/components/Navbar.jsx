@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,7 +14,12 @@ import MenuItem from '@mui/material/MenuItem';
 import CartWidjets from './CartWidjets';
 
 
-const pages = ['Buzos', 'Pijamas','Remeras',];
+
+const pages = [
+              <Link style={{margin: '0px 7px'}} to='/category/remeras'>Remeras</Link>,
+              <Link style={{margin: '0px 7px'}} to='/category/buzos'>buzos</Link>,
+              <Link style={{margin: '0px 7px'}} to='/category/pijamas'>Pijamas</Link>,
+];
 const settings = ['Perfil', 'Cuenta', 'Salir'];
 
 const Navbar = () => {

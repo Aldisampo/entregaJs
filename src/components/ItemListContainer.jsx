@@ -1,17 +1,25 @@
 import React, {useEffect, useState } from 'react';
 import promesas from '../utils/promesas';
-import productos from '../utils/productos';
+import { useParams } from 'react-router-dom';
 import ItemList from './items/ItemList';
 
 function ItemListContainer({message}) {
   
   const [item, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
   
+  const { categoryId } = useParams();
+
+  console.log('1',categoryId);
+
   useEffect(() => {
-    promesas(3000, productos)
-    .then(resultado => setItems(resultado))
-    .catch(error => console.log(error));
-  }, [item])
+    promesas(categoryId)
+      .then((res) => setItems(res))
+      .catch((error) => console.log(error))
+      .finally(() =>{
+        setLoading(false);
+      });
+    }, [categoryId]);
 
   return (
     <>
